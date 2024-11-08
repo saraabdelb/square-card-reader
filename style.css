@@ -1,0 +1,729 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* START OF POP UP*/
+body {
+  font-family: "Red Hat Display";
+}
+body.popup-is-active {
+  overflow-y: hidden;
+}
+body.popup-is-active .pop-up {
+  display: block;
+}
+.pop-up {
+  background: rgba(0, 0, 0, 70%);
+  width: 100%; /* 100vh(viewport height) 100vw to cover the whole page */
+  height: 100%;
+  position: fixed; /*goes top left corder inside the section */
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 1;
+}
+
+.popup-content {
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 800px;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* center-perfectly, up half of its size and left half of its size, no matter the size of the screen will always be in the center*/
+  max-height: 80%; /* give it a height depending on your content*/
+  overflow: auto; /* for responsive gives it a scroll*/
+}
+
+.card-flex {
+  display: flex;
+  gap: 20px;
+}
+.card-left {
+  width: 100%;
+  background: #fff;
+}
+.card-right {
+  width: 100%;
+  height: 400px;
+  background-image: url(cardreader1.png);
+  background-size: cover;
+  background-position: center;
+  background-color: #e9ecef;
+  border-radius: 18px;
+}
+.card-reader {
+  text-align: center;
+  line-height: 2.5em;
+}
+.card-reader h2 {
+  font-size: 38px;
+  margin-bottom: 8px;
+  margin-top: 15px;
+}
+.card-reader p {
+  font-size: 20px;
+  color: #0466c8;
+}
+.card-reader h3 {
+  font-size: 38px;
+  margin: 10px 15px;
+  color: #0466c8;
+  line-height: 1.5em;
+  text-transform: capitalize;
+}
+#close-btn {
+  background: #000;
+  padding: 5px 5px;
+  font-weight: 500;
+  color: white;
+  position: absolute;
+  font-family: "Red Hat Display";
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* START OF NAVIGATION */
+.navigation {
+  background-position: top;
+  background-color: #000;
+  padding: 14px 0;
+  transition: 0.5s;
+}
+
+.navigation a:hover {
+  background: #000;
+  color: #80ffdb;
+}
+
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+}
+
+.content a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #fff;
+}
+
+.menu-holder {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.menu-holder ul {
+  gap: 15px;
+}
+
+.logo img {
+  max-width: 70px;
+  display: block;
+}
+
+.burger {
+  color: #fff;
+  display: none;
+}
+
+.digital-banner {
+  background-image: url("background.jpeg");
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 40%);
+  background-position: top center;
+  background-size: cover;
+  text-align: left;
+  color: #fdfffc;
+  padding: 150px 0;
+}
+
+.digital-banner p {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 30px;
+}
+
+.digital-banner a {
+  text-align: center;
+  font-size: 15px;
+  line-height: 14px;
+}
+
+.digital-banner h2 {
+  font-size: 80px;
+  font-weight: 600;
+  margin-top: 60px;
+}
+
+.digital-banner h3 {
+  font-size: 23px;
+  font-weight: 600;
+  color: #80ffdb;
+}
+
+.digital-banner p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.square {
+  background: #fff;
+  padding: 150px 0;
+}
+
+.square p {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 23px;
+  line-height: 30px;
+}
+
+.square ul {
+  list-style: none;
+  color: #495057;
+  margin-bottom: 10px;
+  line-height: 20px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.square li {
+  margin-bottom: 10px;
+}
+
+.square h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #0466c8;
+}
+
+.parent-flex {
+  display: flex;
+  gap: 35px;
+}
+
+.left-side {
+  width: 40%;
+}
+
+.right-side {
+  width: 60%;
+  background-image: url("picturecard.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.btn:hover {
+  background: #0466c8;
+  color: #fff;
+}
+
+.middle-part {
+  background-image: url("background.jpeg");
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 40%);
+  background-position: center;
+  background-size: cover;
+  padding: 90px 0;
+  text-align: center;
+  color: #fdfffc;
+}
+
+.middle-part h2 {
+  font-size: 50px;
+  font-weight: 400;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.btn2 {
+  font-size: 16px;
+  font-weight: 500;
+  background: #fff;
+  color: #000;
+  padding: 13px 23px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.btn2:hover {
+  background: #000;
+  color: #80ffdb;
+}
+
+.lenders-column {
+  background: #fff;
+  padding: 70px 0;
+}
+
+.lenders-grid-parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+  padding-top: 50px;
+}
+
+.lenders-card {
+  background-color: #fff;
+  padding: 10px 15px 10px;
+  box-shadow: 5, 5, 10px #777;
+}
+
+.lenders-card .text-here {
+  text-align: left;
+}
+
+.lenders-column h3 {
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.lenders-column h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  color: #0466c8;
+}
+
+.lenders-column p {
+  font-size: 23px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+.lenders-card h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.lenders-card p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  line-height: 30px;
+  color: #495057;
+}
+
+.work {
+  background: #fff;
+  padding: 90px 0;
+}
+
+.work-grid-parent {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.work-card {
+  background-color: #fff;
+  padding: 8px 5px 8px;
+  box-shadow: 0, 0, 5px #777;
+  position: relative;
+}
+
+.work-card .text-here {
+  text-align: left;
+}
+
+.work h3 {
+  color: #000;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.work h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  color: #0466c8;
+}
+
+.work h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.work p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 25px;
+  color: #495057;
+}
+
+.parent-flex2 {
+  display: flex;
+  gap: 80px;
+  background-position: center;
+}
+
+.left-side2 {
+  width: 40%;
+  padding: 20px, 0;
+}
+
+.end-part {
+  background-image: url("background.jpeg");
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 40%);
+  background-position: bottom;
+  background-size: cover;
+  padding: 75px 0;
+}
+
+.content1 a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.end-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.content1 {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.end-part h6 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.end-part h5 {
+  text-align: right;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+}
+/* Responsiveness / Media Query */
+
+@media only screen and (max-width: 992px) {
+  .navigation a {
+    font-size: 15px;
+    padding: 10px 0;
+    transition: 0.5s;
+  }
+
+  .digital-banner {
+    padding: 30px 0;
+  }
+
+  .digital-banner .icon {
+    display: none;
+  }
+
+  .parent-flex {
+    gap: 10px;
+  }
+
+  .left-side {
+    width: 100%;
+    text-align: center;
+  }
+
+  .lenders-column {
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .square {
+    padding: 50px 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation a {
+    font-size: 14px;
+  }
+
+  .digital-banner {
+    padding: 100px 0;
+    text-align: center;
+  }
+
+  .digital-banner .icon1 {
+    display: inline-block;
+  }
+
+  .menu-holder {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    color: #fff;
+    font-size: 25px;
+    text-align: right;
+    transition: 0.5s;
+  }
+
+  .burger:hover {
+    background: #000;
+    color: #80ffdb;
+  }
+
+  .parent-flex1 {
+    gap: 50px;
+  }
+
+  .parent-flex {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .right-side {
+    width: auto;
+    height: 400px;
+  }
+
+  .parent-flex2 {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .work {
+    padding: 15px 0;
+  }
+
+  .work-grid-parent {
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .work-card {
+    padding: 5px 5px 5px;
+    text-align: center;
+  }
+
+  .work h2 {
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .work-card .icon {
+    position: absolute;
+    bottom: 0px;
+    left: 47%;
+  }
+
+  .work-card .text-here {
+    text-align: center;
+  }
+
+  .left-side2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .work p {
+    font-size: 16px;
+  }
+
+  .left-side {
+    width: 100%;
+  }
+
+  .right-side1 {
+    width: 100%;
+    height: 300px;
+  }
+
+  .left-side1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .lenders-column {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .middle-part {
+    padding: 20px 0;
+  }
+
+  .square {
+    padding: 20px 0;
+  }
+
+  .lenders-grid-parent {
+    padding-top: 15px 0;
+    text-align: center;
+  }
+  .card-flex {
+    flex-direction: column;
+  }
+  .card-reader h3 {
+    font-size: 38px;
+  }
+  .card-reader h2 {
+    margin-bottom: 6px;
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .navigation a {
+    font-size: 14px;
+  }
+
+  .digital-banner {
+    padding: 5px 0;
+    text-align: center;
+  }
+
+  .digital-banner h2 {
+    margin-top: 30px;
+  }
+
+  .lenders-column {
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .lenders-grid-parent {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    padding: 10px 0;
+  }
+
+  .lenders-card h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 8px;
+  }
+
+  .lenders-card p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    line-height: 24px;
+    color: #495057;
+  }
+
+  .square {
+    padding: 20px 0;
+  }
+
+  .work {
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .work-grid-parent {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8px;
+  }
+
+  .parent-flex1 {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .parent-flex {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .right-side {
+    width: 100%;
+    height: 500px;
+  }
+
+  .left-side {
+    width: 100%;
+  }
+
+  .right-side1 {
+    width: 100%;
+    height: 400px;
+  }
+
+  .left-side1 {
+    width: 100%;
+  }
+
+  .work-card {
+    padding: 5px 5px 5px;
+    text-align: center;
+  }
+
+  .middle-part {
+    padding: 10px 0;
+  }
+
+  .middle-part h2 {
+    font-size: 35px;
+  }
+
+  .end-part {
+    padding: 30px, 0;
+  }
+}
